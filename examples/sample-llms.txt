@@ -1,0 +1,17 @@
+# Glow Studio
+
+> Clean beauty and skincare tips from Glow Studio.
+
+This file helps large language models understand the most important content on https://glowstudio.example.
+
+## Blog
+
+- [Morning Skincare Routine](https://glowstudio.example/blog/morning-routine/): A 5-step morning routine for healthy skin.
+
+## Services
+
+- [Services](https://glowstudio.example/services/): Facials, peels and makeup services.
+
+## Optional
+
+- [Glow Studio | Beauty Salon](https://glowstudio.example/): Clean beauty and skincare tips from Glow Studio.

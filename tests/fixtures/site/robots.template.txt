@@ -1,0 +1,12 @@
+# Example robots.txt with a mixed AI policy
+User-agent: *
+Disallow: /cart/
+
+User-agent: GPTBot
+User-agent: CCBot
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /blog/
+
+Sitemap: {SITEMAP}

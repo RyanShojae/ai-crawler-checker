@@ -1,0 +1,31 @@
+AI Crawler Audit: https://glowstudio.example
+============================================
+robots.txt : found (HTTP 200)
+llms.txt   : NOT found
+Sitemaps   : https://glowstudio.example/sitemap.xml
+
+Crawler             Operator      Purpose   Status    Rule
+------------------------------------------------------------------------------
+GPTBot              OpenAI        training  BLOCKED   / -> blocked; /blog/ -> blocked
+OAI-SearchBot       OpenAI        search    ALLOWED   / -> ok; /blog/ -> ok
+ChatGPT-User        OpenAI        user      ALLOWED   / -> ok; /blog/ -> ok
+ClaudeBot           Anthropic     training  ALLOWED   / -> ok; /blog/ -> ok
+Claude-SearchBot    Anthropic     search    ALLOWED   / -> ok; /blog/ -> ok
+Claude-User         Anthropic     user      ALLOWED   / -> ok; /blog/ -> ok
+PerplexityBot       Perplexity    search    PARTIAL   / -> ok; /blog/ -> blocked
+Perplexity-User     Perplexity    user      ALLOWED   / -> ok; /blog/ -> ok
+Google-Extended     Google        training  ALLOWED   / -> ok; /blog/ -> ok
+Googlebot           Google        search    ALLOWED   / -> ok; /blog/ -> ok
+Bingbot             Microsoft     search    ALLOWED   / -> ok; /blog/ -> ok
+Applebot-Extended   Apple         training  ALLOWED   / -> ok; /blog/ -> ok
+Meta-ExternalAgent  Meta          training  ALLOWED   / -> ok; /blog/ -> ok
+Amazonbot           Amazon        search    ALLOWED   / -> ok; /blog/ -> ok
+CCBot               Common Crawl  training  BLOCKED   / -> blocked; /blog/ -> blocked
+Bytespider          ByteDance     training  ALLOWED   / -> ok; /blog/ -> ok
+DuckAssistBot       DuckDuckGo    search    ALLOWED   / -> ok; /blog/ -> ok
+MistralAI-User      Mistral       user      ALLOWED   / -> ok; /blog/ -> ok
+
+Recommendations:
+  1. AI *search* crawlers are restricted (PerplexityBot). This can remove the site from AI answers and citations (GEO visibility). Unblock them unless this is intentional.
+  2. Training crawlers are allowed (ClaudeBot, Google-Extended, Applebot-Extended, Meta-ExternalAgent, Bytespider). Fine for brand reach; block them individually if you don't want content used for model training. Blocking training bots does not remove you from AI search answers.
+  3. No /llms.txt found. Generate one with --generate-llms to give LLMs a curated map of key pages.
