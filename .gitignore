@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+report.md
+llms.txt
+tests/fixtures/site/robots.txt
+tests/fixtures/site/sitemap.xml
